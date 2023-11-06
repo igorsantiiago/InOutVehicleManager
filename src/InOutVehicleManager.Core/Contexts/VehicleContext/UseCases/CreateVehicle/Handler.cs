@@ -23,7 +23,6 @@ public class Handler : IRequestHandler<Request, Response>
         try
         {
             ValidationResult result = _specification.Validate(request);
-            var errors = new List<ValidationFailure>();
 
             if (!result.IsValid)
                 return new Response("Invalid Request.", 400, result.Errors);
