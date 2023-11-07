@@ -48,9 +48,9 @@ public class Handler : IRequestHandler<Request, Response>
         #region Update Vehicle
         try
         {
-            UpdateVehicle(vehicle, request);
+            vehicle = UpdateVehicle(vehicle, request);
             if (vehicle == null)
-                return new Response("Invalid Vehicle", 400);
+                return new Response("Invalid Vehicle Type", 400);
 
             await _repository.SaveAsync(vehicle, cancellationToken);
         }
@@ -75,6 +75,8 @@ public class Handler : IRequestHandler<Request, Response>
             vehicle.UpdateColor(request.Color);
             vehicle.UpdateLicensePlate(request.LicensePlate);
             vehicle.UpdateVehicleType(type);
+
+            return vehicle;
         }
 
         return null;
