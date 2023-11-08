@@ -21,6 +21,7 @@ public class Requests
     protected static readonly string _EmailAddressLarge = "douglasadams42theanswertolifetheuniverseandeverything.douglasadams42theanswertolifetheuniverseandeverything.douglasadams@gmail.com";
     protected static readonly string _EmailAddressInvalid = "douglasadamscontato.com";
     protected static readonly string _EmailAddressAlreadyExists = "contato@contato.com";
+    protected static readonly string _EmailAddressNotExists = "notexist@contato.com";
     protected static readonly string _EmailAddressAlreadyExistsOtherEmployee = "emailexists@contato.com";
     protected static readonly string _EmailAddress = "douglasadams@contato.com";
     
@@ -31,11 +32,31 @@ public class Requests
     protected static readonly string _PasswordShort = "ABC123";
     protected static readonly string _PasswordLarge = "aBcD1#2$3%4^5&6*7(8)9_0+QWERTYUIOP{}|ASDFGHJKL:ZXCVBNM?qwertyuiop[]asdfghjkl;zxcvbnm,.SN09vn98ud0S=-9HGfvdniojD0-987Nsdvm0iua-079gFBJKgopjkm";
     protected static readonly string _Password = "aBcD1#2$3%4^5&6*7(8)9_0+QWERTY";
+    protected static readonly string _PasswordNotMatch = "A1B2C3D4E5";
     #endregion
 
     public class AuthenticateEmployee
 	{
+        public readonly Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request
+            invalidEmailAddressIsNull = new(_EmailAddressNull, _Password);
 
+        public readonly Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request
+            invalidEmailAddressTooShort = new(_EmailAddressShort, _Password);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request
+            invalidEmailAddressTooLarge = new(_EmailAddressLarge, _Password);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request
+            invalidEmailAddress = new(_EmailAddressInvalid, _Password);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request
+            invalidEmployeeNotFound = new(_EmailAddressNotExists, _Password);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request
+            invalidPasswordNotMatch = new(_EmailAddress, _PasswordNotMatch);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request
+            validEmployeeAuthorized = new(_EmailAddress, _Password);
 	}
 
 	public class CreateEmployee
