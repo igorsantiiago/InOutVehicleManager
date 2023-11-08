@@ -4,5 +4,6 @@ namespace InOutVehicleManager.Core.Contexts.EmployeeContext.UseCases.UpdateEmplo
 
 public interface IRepository
 {
+    Task<bool> AnyAsync(string emailAddress, CancellationToken cancellationToken);
     Task<Employee?> GetEmployeeById(Guid id, CancellationToken cancellationToken);
 }

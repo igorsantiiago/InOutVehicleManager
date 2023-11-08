@@ -13,6 +13,6 @@ public class Specification : AbstractValidator<Request>
         RuleFor(x => x.EmailAddress).NotNull().NotEmpty().WithMessage("Email cannot be null or empty.");
         RuleFor(x => x.EmailAddress).Length(6, 120).WithMessage("Email has to have at least 6 characters and maximum 120 characters.");
         RuleFor(x => x.EmailAddress).EmailAddress().WithMessage("Invalid Email.");
-        RuleFor(x => x.Password).GreaterThanOrEqualTo("8").WithMessage("Password must have at least 8 characters.");
+        RuleFor(x => x.Password).MaximumLength(128).WithMessage("Password max size is 128 caracters.");
     }
 }

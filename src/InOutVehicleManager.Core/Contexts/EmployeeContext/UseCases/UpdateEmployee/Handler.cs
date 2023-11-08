@@ -44,6 +44,23 @@ public class Handler : IRequestHandler<Request, Response>
         }
         #endregion
 
+        #region Check if Email exists
+        try
+        {
+            if (request.EmailAddress != employee.Email.Address)
+            {
+                var exists = await _repository.AnyAsync(request.EmailAddress, cancellationToken);
+
+                if (exists)
+                    return new Response("Email already exists.", 400);
+            }
+        }
+        catch
+        {
+            return new Response("Unable to verify email.", 400);
+        }
+        #endregion
+
         #region Update Employee
         try
         {
