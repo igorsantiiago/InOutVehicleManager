@@ -22,11 +22,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             ValidationResult result = _specification.Validate(request);
             if (!result.IsValid)
-                return new Response("Invalid Request", 400, result.Errors);
+                return new Response("Erro: Requisição Inválida.", 400, result.Errors);
         }
         catch
         {
-            return new Response("Unable to validate request.", 500);
+            return new Response("Erro: Falha ao validar a requisição.", 500);
         }
         #endregion
 
@@ -36,11 +36,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             employee = await _repository.GetEmployeeById(request.Id, cancellationToken);
             if (employee == null)
-                return new Response("Employee not found.", 404);
+                return new Response("Erro: Funcionário não encontrado.", 404);
         }
         catch
         {
-            return new Response("Unable to retrieve employee.", 500);
+            return new Response("Erro: Falha ao buscar o funcionário.", 500);
         }
         #endregion
 
@@ -52,12 +52,12 @@ public class Handler : IRequestHandler<Request, Response>
                 var exists = await _repository.AnyAsync(request.EmailAddress, cancellationToken);
 
                 if (exists)
-                    return new Response("Email already exists.", 400);
+                    return new Response("Erro: Email já esta cadastrado.", 400);
             }
         }
         catch
         {
-            return new Response("Unable to verify email.", 400);
+            return new Response("Erro: Falha ao verificar email.", 400);
         }
         #endregion
 
@@ -73,7 +73,7 @@ public class Handler : IRequestHandler<Request, Response>
         #endregion
 
         #region Response
-        return new Response("Employee successfully updated.", new ResponseData(employee.Id, employee.Name.ToString(), employee.Email.ToString()));
+        return new Response("Funcionário atualizado com sucesso.", new ResponseData(employee.Id, employee.Name.ToString(), employee.Email.ToString()));
         #endregion
     }
 

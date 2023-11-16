@@ -10,23 +10,23 @@ public class Handler : IRequestHandler<Request, Response>
 	private readonly IRepository _repository;
 	private readonly Specification _specification = new();
 
-    public Handler(IRepository repository)
-    {
-        _repository = repository;
-    }
+	public Handler(IRepository repository)
+	{
+		_repository = repository;
+	}
 
-    public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
-    {
+	public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
+	{
 		#region Validate Request
 		try
 		{
 			ValidationResult result = _specification.Validate(request);
 			if (!result.IsValid)
-				return new Response("Requisição inválida.", 400, result.Errors);
+				return new Response("Erro: Requisição Inválida.", 400, result.Errors);
 		}
 		catch
 		{
-			return new Response("Falha ao validar a requisição.", 500);
+			return new Response("Erro: Falha ao validar a requisição.", 500);
 		}
 		#endregion
 
@@ -34,20 +34,20 @@ public class Handler : IRequestHandler<Request, Response>
 		Parking? parking;
 		try
 		{
-            parking = await _repository.GetCompanyParkingByIdAsync(request.Id, cancellationToken);
+			parking = await _repository.GetCompanyParkingByIdAsync(request.Id, cancellationToken);
 			if (parking == null)
-				return new Response("Estacionamento da empresa não encontrado.", 404);
+				return new Response("Erro: Estacionamento da empresa não encontrado.", 404);
 		}
 		catch
 		{
-			return new Response("Falha ao buscar estacionamento.", 500);
+			return new Response("Erro: Falha ao buscar estacionamento.", 500);
 		}
 		#endregion
 
 		#region Delete CompanyParking
 		try
 		{
-            await _repository.DeleteCompanyParking(parking, cancellationToken);
+			await _repository.DeleteCompanyParking(parking, cancellationToken);
 		}
 		catch (Exception ex)
 		{

@@ -22,11 +22,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             ValidationResult result = _specification.Validate(request);
             if (!result.IsValid)
-                return new Response("Requisição inválida.", 400, result.Errors);
+                return new Response("Erro: Requisição Inválida.", 400, result.Errors);
         }
         catch
         {
-            return new Response("Falha na validdação da requisição", 500);
+            return new Response("Erro: Falha na validdação da requisição", 500);
         }
         #endregion
 
@@ -36,11 +36,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             parking = await _repository.GetCompanyParkingByIdAsync(request.Id, cancellationToken);
             if (parking == null)
-                return new Response("Estacionamento não encontrado.", 404);
+                return new Response("Erro: Estacionamento não encontrado.", 404);
         }
         catch
         {
-            return new Response("Falha na busca de um estacionamento.", 500);
+            return new Response("Erro: Falha na busca de um estacionamento.", 500);
         }
         #endregion
 

@@ -22,11 +22,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             ValidationResult result = _specification.Validate(request);
             if (!result.IsValid)
-                return new Response("Invalid Request.", 400, result.Errors);
+                return new Response("Erro: Requisição Inválida.", 400, result.Errors);
         }
         catch
         {
-            return new Response("Unable to validate request.", 500);
+            return new Response("Erro: Falha ao validar a requição.", 500);
         }
         #endregion
 
@@ -36,11 +36,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             employee = await _repository.GetEmployeeByEmail(request.Email, cancellationToken);
             if (employee == null)
-                return new Response("Employee not found.", 404);
+                return new Response("Erro: Funcionário não encontrado.", 404);
         }
         catch
         {
-            return new Response("Unable to retrieve employee.", 500);
+            return new Response("Erro: Falha ao buscar o funcionário.", 500);
         }
         #endregion
 
@@ -48,7 +48,7 @@ public class Handler : IRequestHandler<Request, Response>
         try
         {
             if (!employee.Password.VerifyHash(request.Password))
-                return new Response("Email or Password invalid.", 400);
+                return new Response("Erro: Email ou Senha Inválidos.", 400);
         }
         catch (Exception ex)
         {

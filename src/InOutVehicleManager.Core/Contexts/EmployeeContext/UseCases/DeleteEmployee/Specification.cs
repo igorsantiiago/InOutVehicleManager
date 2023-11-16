@@ -6,6 +6,7 @@ public class Specification : AbstractValidator<Request>
 {
     public Specification()
     {
-        RuleFor(x => x.Id).NotNull().NotEmpty().WithMessage("Id cannot be null or empty.");
+        RuleFor(x => x.Id).NotNull().WithMessage("O Id não pode ser nulo.");
+        RuleFor(x => x.Id).NotEmpty().WithMessage("O Id não pode estar vazio.");
     }
 }

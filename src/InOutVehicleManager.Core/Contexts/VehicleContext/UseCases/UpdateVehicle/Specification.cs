@@ -6,16 +6,22 @@ public class Specification : AbstractValidator<Request>
 {
     public Specification()
     {
-        RuleFor(x => x.Id).NotNull().NotEmpty().WithMessage("ID cannot be null or empty.");
-        RuleFor(x => x.Model).NotNull().NotEmpty().WithMessage("Model cannot be null or empty.");
-        RuleFor(x => x.Model).Length(2, 30).WithMessage("Model must have at least 2 characters and maximum 30 characters.");
-        RuleFor(x => x.Brand).NotNull().NotEmpty().WithMessage("Brand cannot be null or empty.");
-        RuleFor(x => x.Brand).Length(2, 30).WithMessage("Brand must have at least 2 characters and maximum 30 characters.");
-        RuleFor(x => x.Color).NotNull().NotEmpty().WithMessage("Color cannot be null or empty.");
-        RuleFor(x => x.Color).Length(3, 20).WithMessage("Color must have at least 3 characters and maximum 20 characters.");
-        RuleFor(x => x.LicensePlate).NotNull().NotEmpty().WithMessage("License Plate cannot be null or empty.");
-        RuleFor(x => x.LicensePlate).Length(6, 12).WithMessage("License Plate must have at least 3 characters and maximum 12 characters.");
-        RuleFor(x => x.Type).NotNull().NotEmpty().WithMessage("Vehicle Type cannot be null or empty.");
-        RuleFor(x => x.Type).Length(3, 12).WithMessage("Vehicle Type must be Car or Motocycle");
+        RuleFor(x => x.Id).NotNull().WithMessage("O ID não pode ser nulo.");
+        RuleFor(x => x.Id).NotEmpty().WithMessage("O ID não pode estar vazio.");
+        RuleFor(x => x.Model).NotNull().WithMessage("O modelo do veículo não pode ser nulo.");
+        RuleFor(x => x.Model).NotEmpty().WithMessage("O modelo do veículo não pode estar vazio.");
+        RuleFor(x => x.Model).Length(2, 30).WithMessage("O modelo do veículo precisa de pelo menos 2 caracteres e no máximo 30 caracteres.");
+        RuleFor(x => x.Brand).NotNull().WithMessage("A marca do veículo não pode ser nula.");
+        RuleFor(x => x.Brand).NotEmpty().WithMessage("A marca do veículo não pode estar vazia.");
+        RuleFor(x => x.Brand).Length(2, 30).WithMessage("A marca do veículo precisa de pelo menos 2 caracteres e no máximo 30 caracteres.");
+        RuleFor(x => x.Color).NotNull().WithMessage("A cor do veículo não pode ser nula.");
+        RuleFor(x => x.Color).NotEmpty().WithMessage("A cor do veículo não pode estar vazia.");
+        RuleFor(x => x.Color).Length(3, 20).WithMessage("A cor do veículo precisa de pelo menos 3 caracteres e no máximo 20 caracteres.");
+        RuleFor(x => x.LicensePlate).NotNull().WithMessage("A placa do veículo não pode ser nula.");
+        RuleFor(x => x.LicensePlate).NotEmpty().WithMessage("A placa do veículo não pode estar vazia.");
+        RuleFor(x => x.LicensePlate).Length(6, 12).WithMessage("A placa do veículo precisa de pelo menos 6 caracteres e no máximo 12 caracteres.");
+        RuleFor(x => x.Type).NotNull().NotEmpty().WithMessage("O categoria do veículo não pode ser nula.");
+        RuleFor(x => x.Type).NotEmpty().WithMessage("O categoria do veículo não pode estar vazia.");
+        RuleFor(x => x.Type).Length(3, 12).WithMessage("Categoria de veículo inválido.");
     }
 }

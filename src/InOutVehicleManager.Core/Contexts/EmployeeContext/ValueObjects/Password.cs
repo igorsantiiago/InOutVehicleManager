@@ -44,7 +44,7 @@ public class Password : ValueObject
     public static string Hashing(string password, short saltSize = 16, short keySize = 32, int iterations = 10000, char splitChar = '.')
     {
         if (string.IsNullOrEmpty(password))
-            throw new Exception("Password is null or empty");
+            throw new Exception("Erro: A senha esta nula ou vazia.");
 
         password += Configuration.Secrets.PasswordSaltKey;
 

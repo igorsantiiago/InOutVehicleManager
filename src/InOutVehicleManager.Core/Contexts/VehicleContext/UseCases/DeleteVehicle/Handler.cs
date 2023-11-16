@@ -22,11 +22,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             ValidationResult result = _specification.Validate(request);
             if (!result.IsValid)
-                return new Response("Invalid Request.", 400, result.Errors);
+                return new Response("Erro: Requisição Inválida.", 400, result.Errors);
         }
         catch
         {
-            return new Response("Unable to validate request.", 500);
+            return new Response("Erro: Falha ao validar a requisição.", 500);
         }
         #endregion
 
@@ -36,11 +36,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             vehicle = await _repository.GetVehicleByIdAsync(request.Id, cancellationToken);
             if (vehicle == null)
-                return new Response("Vehicle not found.", 404);
+                return new Response("Erro: Veículo não encontrado.", 404);
         }
         catch
         {
-            return new Response("Unable to retrieve vehicle.", 500);
+            return new Response("Erro: Falha ao buscar o veículo.", 500);
         }
         #endregion
 
@@ -56,7 +56,7 @@ public class Handler : IRequestHandler<Request, Response>
         #endregion
 
         #region Response
-        return new Response("Vehicle deleted successfully.", new ResponseData(request.Id));
+        return new Response("Veículo excluído com sucesso.", new ResponseData(request.Id));
         #endregion
     }
 }

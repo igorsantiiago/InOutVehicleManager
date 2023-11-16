@@ -25,11 +25,11 @@ public class Handler : IRequestHandler<Request, Response>
             ValidationResult result = _specification.Validate(request);
 
             if (!result.IsValid)
-                return new Response("Invalid Request.", 400, result.Errors);
+                return new Response("Erro: Requisição Inválida.", 400, result.Errors);
         }
         catch
         {
-            return new Response("Unable to validate request.", 500);
+            return new Response("Erro: Falha ao validar a requisição.", 500);
         }
         #endregion
 
@@ -38,11 +38,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             var exists = await _repository.AnyAsync(request.LicensePlate, cancellationToken);
             if (exists)
-                return new Response("Vehicle license plate already registered.", 400);
+                return new Response("Erro: A placa do veículo já esta cadastrada.", 400);
         }
         catch
         {
-            return new Response("Unable to check if vehicle is already registered.", 500);
+            return new Response("Erro: Falha ao verificar se o veículo já esta cadastrado.", 500);
         }
         #endregion
 
@@ -52,7 +52,7 @@ public class Handler : IRequestHandler<Request, Response>
         {
             vehicle = CreateVehicle(request);
             if (vehicle == null)
-                return new Response("Invalid Vehicle Type", 400);
+                return new Response("Erro: Categoria de veículo inválida.", 400);
 
             await _repository.SaveAsync(vehicle, cancellationToken);
         }
@@ -63,7 +63,7 @@ public class Handler : IRequestHandler<Request, Response>
         #endregion
 
         #region Response
-        return new Response("Vehicle created successfully", new ResponseData(vehicle.Id, vehicle.Model, vehicle.Brand, vehicle.Color, vehicle.LicensePlate, vehicle.Type));
+        return new Response("Veículo cadastrado com sucesso.", new ResponseData(vehicle.Id, vehicle.Model, vehicle.Brand, vehicle.Color, vehicle.LicensePlate, vehicle.Type));
         #endregion
     }
 

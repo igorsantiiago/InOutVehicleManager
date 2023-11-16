@@ -22,11 +22,11 @@ public class Handler : IRequestHandler<Request, Response>
             ValidationResult result = _specification.Validate(request);
 
             if (!result.IsValid)
-                return new Response("Invalid Request.", 400, result.Errors);
+                return new Response("Erro: Requisição Inválida.", 400, result.Errors);
         }
         catch
         {
-            return new Response("Unable to validate request.", 500);
+            return new Response("Erro: Falha ao validar a requisição.", 500);
         }
         #endregion
 
@@ -35,11 +35,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             var exists = await _repository.AnyAsync(request.EmailAddress, cancellationToken);
             if (exists)
-                return new Response("Email already registered.", 400);
+                return new Response("Erro: Email já cadastrado.", 400);
         }
         catch
         {
-            return new Response("Unable to verify email.", 500);
+            return new Response("Erro: Falha ao verificar email.", 500);
         }
         #endregion
 
@@ -49,7 +49,7 @@ public class Handler : IRequestHandler<Request, Response>
         {
             employee = CreateEmployee(request);
             if (employee == null)
-                return new Response("Failed to create a new employee.", 400);
+                return new Response("Erro: Falha no cadastro do funcionário.", 400);
 
             await _repository.SaveAsync(employee, cancellationToken);
         }
@@ -60,7 +60,7 @@ public class Handler : IRequestHandler<Request, Response>
         #endregion
 
         #region Response
-        return new Response("Employee created successfully.", 
+        return new Response("Funcionário cadastrado com sucesso.",
             new ResponseData(employee.Id, employee.Name.ToString(), employee.Email.Address, employee.IdEmployer));
         #endregion
     }

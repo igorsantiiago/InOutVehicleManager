@@ -22,11 +22,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             ValidationResult result = _specification.Validate(request);
             if (!result.IsValid)
-                return new Response("Requisição inválida.", 400, result.Errors);
+                return new Response("Erro: Requisição Inválida.", 400, result.Errors);
         }
         catch
         {
-            return new Response("Falha ao validar a requisição.", 500);
+            return new Response("Erro: Falha ao validar a requisição.", 500);
         }
         #endregion
 
@@ -35,11 +35,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             var exists = await _repository.AnyAsync(request.Cnpj, cancellationToken);
             if (exists)
-                return new Response("Esse CNPJ já esta cadastrado.", 400);
+                return new Response("Erro: CNPJ já esta cadastrado.", 400);
         }
         catch
         {
-            return new Response("Falha ao verificar a existência do CNPJ.", 500);
+            return new Response("Erro: Falha ao verificar a existência do CNPJ.", 500);
         }
         #endregion
 

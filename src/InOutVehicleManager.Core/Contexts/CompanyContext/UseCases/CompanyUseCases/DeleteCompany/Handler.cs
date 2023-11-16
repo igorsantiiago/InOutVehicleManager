@@ -22,11 +22,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             ValidationResult result = _specification.Validate(request);
             if (!result.IsValid)
-                return new Response("Requisição Inválida.", 400, result.Errors);
+                return new Response("Erro: Requisição Inválida.", 400, result.Errors);
         }
         catch
         {
-            return new Response("Falha ao validar a requisição.", 500);
+            return new Response("Erro: Falha ao validar a requisição.", 500);
         }
         #endregion
 
@@ -36,11 +36,11 @@ public class Handler : IRequestHandler<Request, Response>
         {
             company = await _repository.GetCompanyByIdAsync(request.Id, cancellationToken);
             if (company == null)
-                return new Response("Empresa não encontrada.", 404);
+                return new Response("Erro: Empresa não encontrada.", 404);
         }
         catch
         {
-            return new Response("Falha ao buscar uma empresa.", 500);
+            return new Response("Erro: Falha ao buscar uma empresa.", 500);
         }
         #endregion
 
