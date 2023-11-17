@@ -20,9 +20,8 @@ public class Parking : Entity
     public int AvailableCarParkingSpaces { get; private set; }
     public int AvailableMotorcycleParkingSpaces { get; private set; }
 
-    public Guid? IdCompany { get; set; }
     [JsonIgnore]
-    public Company Company { get; set; } = null!;
+    public List<Company> Companies { get; set; } = null!;
 
     public void UpddateTotalCarSpaces(int totalCarSpaces)
     {
@@ -37,10 +36,6 @@ public class Parking : Entity
         TotalMotorcycleParkingSpaces = totalMotorcycleSpaces;
         AvailableMotorcycleParkingSpaces = totalMotorcycleSpaces - spaceUsage;
     }
-
-    public void UpdateIdCompany(Guid? idCompany)
-        => IdCompany = idCompany;
-        
 
     public void VehicleIn(VehicleType type)
     {
@@ -58,4 +53,3 @@ public class Parking : Entity
             AvailableMotorcycleParkingSpaces++;
     }
 }
-    

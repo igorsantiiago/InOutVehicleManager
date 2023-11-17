@@ -58,7 +58,7 @@ public class Handler : IRequestHandler<Request, Response>
 
         #region Response
         return new Response("Estacionamento atualizado com sucesso.",
-            new ResponseData(parking.Id, parking.TotalCarParkingSpaces, parking.TotalMotorcycleParkingSpaces, parking.IdCompany));
+            new ResponseData(parking.Id, parking.TotalCarParkingSpaces, parking.TotalMotorcycleParkingSpaces));
         #endregion
     }
 
@@ -66,7 +66,6 @@ public class Handler : IRequestHandler<Request, Response>
     {
         parking.UpddateTotalCarSpaces(request.TotalCarParkingSpaces);
         parking.UpdateTotalMotorcycleSpaces(request.TotalMotorcycleParkingSpaces);
-        parking.UpdateIdCompany(request.IdCompany);
 
         return parking;
     }

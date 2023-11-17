@@ -6,4 +6,5 @@ public interface IRepository
 {
     Task<bool> AnyAsync(string emailAddress, CancellationToken cancellationToken);
     Task<Employee?> GetEmployeeById(Guid id, CancellationToken cancellationToken);
+    Task SaveAsync(Employee employee, CancellationToken cancellationToken);
 }

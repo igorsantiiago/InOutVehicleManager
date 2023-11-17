@@ -34,7 +34,7 @@ public class Handler : IRequestHandler<Request, Response>
         Parking? parking;
         try
         {
-            parking = new(request.TotalCarParkingSpaces, request.TotalMotorcycleParkingSpaces);
+            parking = CreateParking(request);
             if (parking == null)
                 return new Response("Erro: Falha ao criar estacionamento para a empresa.", 400);
 
@@ -47,7 +47,7 @@ public class Handler : IRequestHandler<Request, Response>
         #endregion
 
         #region Response
-        return new Response("Estacionamento criado com sucesso.", new ResponseData(parking.Id, parking.TotalCarParkingSpaces, parking.TotalMotorcycleParkingSpaces, parking.IdCompany));
+        return new Response("Estacionamento criado com sucesso.", new ResponseData(parking.Id, parking.TotalCarParkingSpaces, parking.TotalMotorcycleParkingSpaces));
         #endregion
     }
 

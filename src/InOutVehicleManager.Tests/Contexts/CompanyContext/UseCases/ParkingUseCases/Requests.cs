@@ -19,10 +19,10 @@ public class Requests
     public class UpdateParking
     {
         public readonly Core.Contexts.CompanyContext.UseCases.ParkingUseCases.UpdateParking.Request
-            invalidParkingNotFound = new(_NewGuid, 20, 30, null);
+            invalidParkingNotFound = new(_NewGuid, 20, 30);
 
         public readonly Core.Contexts.CompanyContext.UseCases.ParkingUseCases.UpdateParking.Request
-            validParkingUpdate = new(_GuidRegistered, 20, 30, null);
+            validParkingUpdate = new(_GuidRegistered, 20, 30);
     }
 
     public class DeleteParking

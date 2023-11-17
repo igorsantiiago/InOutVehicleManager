@@ -24,4 +24,12 @@ public class FakeRepository : IRepository
 
         return Task.FromResult<Employee?>(null);
     }
+
+    public Task SaveAsync(Employee employee, CancellationToken cancellationToken)
+    {
+        if (employee == null)
+            return Task.FromResult(false);
+
+        return Task.FromResult(true);
+    }
 }

@@ -10,6 +10,8 @@ public class Role : Entity
 
     public string Name { get; private set; } = string.Empty;
 
+    public List<Employee> Employees { get; set; } = new();
+
     public void UpdateName(string name) => Name = name;
 
 }

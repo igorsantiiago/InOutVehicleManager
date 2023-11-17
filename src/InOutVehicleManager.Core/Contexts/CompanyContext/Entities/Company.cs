@@ -13,7 +13,6 @@ public class Company : Entity
         Cnpj = cnpj;
         Address = address;
         Phone = phone;
-        IdParking = idParking;
         Employees = new();
     }
 
@@ -22,10 +21,8 @@ public class Company : Entity
     public Address Address { get; private set; }
     public Phone Phone { get; private set; }
 
-
-    public Guid? IdParking { get; set; }
     [JsonIgnore]
-    public Parking Parking { get; set; } = null!;
+    public List<Parking> Parking { get; set; } = null!;
 
     public List<Employee> Employees { get; set; }
 

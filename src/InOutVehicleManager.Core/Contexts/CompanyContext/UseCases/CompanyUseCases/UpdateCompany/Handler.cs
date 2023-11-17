@@ -57,7 +57,7 @@ public class Handler : IRequestHandler<Request, Response>
         #endregion
 
         #region Response
-        return new Response("Os dados da empresa foram atualizados com sucesso.", new ResponseData(company.Id, company.Name, company.Cnpj.ToString(), company.IdParking));
+        return new Response("Os dados da empresa foram atualizados com sucesso.", new ResponseData(company.Id, company.Name, company.Cnpj.ToString()));
         #endregion
     }
 

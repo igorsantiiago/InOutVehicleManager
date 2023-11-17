@@ -65,6 +65,7 @@ public class Handler : IRequestHandler<Request, Response>
         try
         {
             employee = UpdateEmployee(employee, request);
+            await _repository.SaveAsync(employee, cancellationToken);
         }
         catch (Exception ex)
         {

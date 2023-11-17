@@ -21,4 +21,4 @@ public class Response : SharedContext.UseCases.Response
     public ResponseData? Data { get; set; }
 }
 
-public record ResponseData(Guid Id, int TotalCarParkingSpaces, int TotalMotorcycleParkingSpaces, Guid? IdCompany = null);
+public record ResponseData(Guid Id, int TotalCarParkingSpaces, int TotalMotorcycleParkingSpaces);
