@@ -11,7 +11,7 @@ public class VehicleMap : IEntityTypeConfiguration<Vehicle>
         builder.ToTable("Vehicle");
         builder.HasKey(x => x.Id);
 
-        builder.Property(x => x.Model).HasColumnName("Model").HasColumnType("NVARCHAHR").HasMaxLength(30).IsRequired();
+        builder.Property(x => x.Model).HasColumnName("Model").HasColumnType("NVARCHAR").HasMaxLength(30).IsRequired();
 
         builder.Property(x => x.Brand).HasColumnName("Brand").HasColumnType("NVARCHAR").HasMaxLength(30).IsRequired();
 

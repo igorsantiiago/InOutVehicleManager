@@ -29,7 +29,7 @@ public static class CompanyExtension
         #endregion
     }
 
-    public static void AddCompanyEndpoint(this WebApplication app)
+    public static void MapCompanyEndpoint(this WebApplication app)
     {
         #region Create Company
         app.MapPost("api/v1/company/create", async (
@@ -71,7 +71,7 @@ public static class CompanyExtension
             var result = await handler.Handle(request, new CancellationToken());
 
             return result.IsSuccess
-                ? Results.Ok("Empresa removida com sucesso.")
+                ? Results.Ok(result)
                 : Results.Json(result, statusCode: result.Status);
         });
         #endregion

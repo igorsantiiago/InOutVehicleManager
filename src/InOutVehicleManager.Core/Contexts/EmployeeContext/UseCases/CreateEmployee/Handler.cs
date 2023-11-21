@@ -61,13 +61,13 @@ public class Handler : IRequestHandler<Request, Response>
 
         #region Response
         return new Response("Funcionário cadastrado com sucesso.",
-            new ResponseData(employee.Id, employee.Name.ToString(), employee.Email.Address, employee.IdEmployer));
+            new ResponseData(employee.Id, employee.Name.ToString(), employee.Email.Address));
         #endregion
     }
 
     private static Employee? CreateEmployee(Request request)
     {
-        Employee? employee = new(request.FirstName, request.LastName, request.EmailAddress, request.IdEmployer, request.Password);
+        Employee? employee = new(request.FirstName, request.LastName, request.EmailAddress, request.Password);
         if (employee == null)
             return null;
 

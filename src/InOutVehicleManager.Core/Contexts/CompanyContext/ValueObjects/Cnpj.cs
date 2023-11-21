@@ -4,6 +4,10 @@ namespace InOutVehicleManager.Core.Contexts.CompanyContext.ValueObjects;
 
 public class Cnpj : ValueObject
 {
+    protected Cnpj()
+    {
+
+    }
     public Cnpj(string cpnj) => Document = cpnj;
 
     public string Document { get; private set; } = string.Empty;

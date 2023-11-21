@@ -25,16 +25,18 @@ public class Parking : Entity
 
     public void UpddateTotalCarSpaces(int totalCarSpaces)
     {
-        var spaceUsage = totalCarSpaces - (TotalCarParkingSpaces - AvailableCarParkingSpaces);
+        var spaceUsage = TotalCarParkingSpaces - AvailableCarParkingSpaces;
         TotalCarParkingSpaces = totalCarSpaces;
-        AvailableCarParkingSpaces = totalCarSpaces - spaceUsage;
+        // AvailableCarParkingSpaces = totalCarSpaces - spaceUsage;
+        AvailableCarParkingSpaces = Math.Max(0, totalCarSpaces - spaceUsage);
     }
 
     public void UpdateTotalMotorcycleSpaces(int totalMotorcycleSpaces)
     {
-        var spaceUsage = totalMotorcycleSpaces - (TotalMotorcycleParkingSpaces - AvailableMotorcycleParkingSpaces);
+        var spaceUsage = TotalMotorcycleParkingSpaces - AvailableMotorcycleParkingSpaces;
         TotalMotorcycleParkingSpaces = totalMotorcycleSpaces;
-        AvailableMotorcycleParkingSpaces = totalMotorcycleSpaces - spaceUsage;
+        // AvailableMotorcycleParkingSpaces = totalMotorcycleSpaces - spaceUsage;
+        AvailableMotorcycleParkingSpaces = Math.Max(0, totalMotorcycleSpaces - spaceUsage);
     }
 
     public void VehicleIn(VehicleType type)

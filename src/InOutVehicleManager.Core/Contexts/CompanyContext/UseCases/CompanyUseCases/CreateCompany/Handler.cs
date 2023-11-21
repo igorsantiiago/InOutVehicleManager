@@ -68,7 +68,7 @@ public class Handler : IRequestHandler<Request, Response>
         var adddress = CreateAddress(request);
         var phone = CreatePhone(request);
 
-        Company company = new(request.Name, cnpj, adddress, phone, request.IdParking);
+        Company company = new(request.Name, cnpj, adddress, phone);
 
         return company;
     }

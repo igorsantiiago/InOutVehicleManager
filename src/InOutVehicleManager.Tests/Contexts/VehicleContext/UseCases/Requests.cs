@@ -185,4 +185,13 @@ public class Requests
         public readonly Core.Contexts.VehicleContext.UseCases.DeleteVehicle.Request
             validVehicleDeleted = new(_GuidRegistered);
     }
+
+    public class SearchVehicleRequests
+    {
+        public readonly Core.Contexts.VehicleContext.UseCases.SearchVehicle.Request
+            _invalidVehicleNotFound = new(_NewGuid);
+
+        public readonly Core.Contexts.VehicleContext.UseCases.SearchVehicle.Request
+            _validVehicle = new(_GuidRegistered);
+    }
 }

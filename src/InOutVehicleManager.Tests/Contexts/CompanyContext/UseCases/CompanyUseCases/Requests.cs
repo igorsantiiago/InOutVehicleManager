@@ -86,238 +86,238 @@ public class Requests
     {
         #region Invalid Name
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidNameIsNull = new(_NameNull, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidNameIsNull = new(_NameNull, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidNameIsEmpty = new(_NameEmpty, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidNameIsEmpty = new(_NameEmpty, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidNameTooShort = new(_NameShort, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidNameTooShort = new(_NameShort, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidNameTooLarge = new(_NameLarge, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidNameTooLarge = new(_NameLarge, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Cnpj
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCnpjIsNull = new(_Name, _CnpjNull, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCnpjIsNull = new(_Name, _CnpjNull, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCnpjIsEmpty = new(_Name, _CnpjEmpty, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCnpjIsEmpty = new(_Name, _CnpjEmpty, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCnpjTooShort = new(_Name, _CnpjShort, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCnpjTooShort = new(_Name, _CnpjShort, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCnpjTooLarge = new(_Name, _CnpjLarge, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCnpjTooLarge = new(_Name, _CnpjLarge, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Zipcode
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidZipCodeIsNull = new(_Name, _CnpjNew, _ZipCodeNull, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidZipCodeIsNull = new(_Name, _CnpjNew, _ZipCodeNull, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidZipCodeIsEmpty = new(_Name, _CnpjNew, _ZipCodeEmpty, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidZipCodeIsEmpty = new(_Name, _CnpjNew, _ZipCodeEmpty, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidZipCodeTooShort = new(_Name, _CnpjNew, _ZipCodeShort, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidZipCodeTooShort = new(_Name, _CnpjNew, _ZipCodeShort, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidZipCodeTooLarge = new(_Name, _CnpjNew, _ZipCodeLarge, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidZipCodeTooLarge = new(_Name, _CnpjNew, _ZipCodeLarge, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Street
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidStreetIsNull = new(_Name, _CnpjNew, _ZipCode, _StreetNull, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidStreetIsNull = new(_Name, _CnpjNew, _ZipCode, _StreetNull, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidStreetIsEmpty = new(_Name, _CnpjNew, _ZipCode, _StreetEmpty, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidStreetIsEmpty = new(_Name, _CnpjNew, _ZipCode, _StreetEmpty, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidStreetTooShort = new(_Name, _CnpjNew, _ZipCode, _StreetShort, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidStreetTooShort = new(_Name, _CnpjNew, _ZipCode, _StreetShort, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidStreetTooLarge = new(_Name, _CnpjNew, _ZipCode, _StreetLarge, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidStreetTooLarge = new(_Name, _CnpjNew, _ZipCode, _StreetLarge, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Address Line
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidAddressLineIsNull = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLineNull, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidAddressLineIsNull = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLineNull, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidAddressLineIsEmpty = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLineEmpty, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidAddressLineIsEmpty = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLineEmpty, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidAddressLineTooShort = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLineShort, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidAddressLineTooShort = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLineShort, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidAddressLineTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLineLarge, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidAddressLineTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLineLarge, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid City
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCityIsNull = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityNull, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCityIsNull = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityNull, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCityIsEmpty = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityEmpty, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCityIsEmpty = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityEmpty, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCityTooShort = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityShort, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCityTooShort = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityShort, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCityTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityLarge, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCityTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityLarge, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid State
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidStateIsNull = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateNull, _LandlinePhone, _MobilePhone, null);
+            invalidStateIsNull = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateNull, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidStateIsEmpty = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateEmpty, _LandlinePhone, _MobilePhone, null);
+            invalidStateIsEmpty = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateEmpty, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidStateTooShort = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateShort, _LandlinePhone, _MobilePhone, null);
+            invalidStateTooShort = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateShort, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidStateTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateLarge, _LandlinePhone, _MobilePhone, null);
+            invalidStateTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateLarge, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Landline Phone
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidLandlinePhoneTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhoneLarge, _MobilePhone, null);
+            invalidLandlinePhoneTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhoneLarge, _MobilePhone);
         #endregion
 
         #region Invalid Mobile Phone
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidMobilePhoneTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhoneLarge, null);
+            invalidMobilePhoneTooLarge = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhoneLarge);
         #endregion
 
         #region Invalid Already Exists
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            invalidCompanyAlreadyExists = new(_Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCompanyAlreadyExists = new(_Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.CreateCompany.Request
-            validRequest = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            validRequest = new(_Name, _CnpjNew, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
     }
 
     public class UpdateCompany
     {
         #region Invalid Name
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidNameIsNull = new(_GuidAlreadyExists, _NameNull, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidNameIsNull = new(_GuidAlreadyExists, _NameNull, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidNameIsEmpty = new(_GuidAlreadyExists, _NameEmpty, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidNameIsEmpty = new(_GuidAlreadyExists, _NameEmpty, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidNameTooShort = new(_GuidAlreadyExists, _NameShort, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidNameTooShort = new(_GuidAlreadyExists, _NameShort, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidNameTooLarge = new(_GuidAlreadyExists, _NameLarge, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidNameTooLarge = new(_GuidAlreadyExists, _NameLarge, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Cnpj
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCnpjIsNull = new(_GuidAlreadyExists, _Name, _CnpjNull, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCnpjIsNull = new(_GuidAlreadyExists, _Name, _CnpjNull, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCnpjIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjEmpty, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCnpjIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjEmpty, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCnpjTooShort = new(_GuidAlreadyExists, _Name, _CnpjShort, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCnpjTooShort = new(_GuidAlreadyExists, _Name, _CnpjShort, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCnpjTooLarge = new(_GuidAlreadyExists, _Name, _CnpjLarge, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCnpjTooLarge = new(_GuidAlreadyExists, _Name, _CnpjLarge, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Zipcode
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidZipcodeIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCodeNull, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidZipcodeIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCodeNull, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidZipcodeIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCodeEmpty, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidZipcodeIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCodeEmpty, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidZipcodeTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCodeShort, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidZipcodeTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCodeShort, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidZipcodeTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCodeLarge, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidZipcodeTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCodeLarge, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Street
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidStreetIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _StreetNull, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidStreetIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _StreetNull, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidStreetIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _StreetEmpty, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidStreetIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _StreetEmpty, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidStreetTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _StreetShort, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidStreetTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _StreetShort, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidStreetTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _StreetLarge, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidStreetTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _StreetLarge, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Address Line
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidAddressLineIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLineNull, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidAddressLineIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLineNull, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidAddressLineIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLineEmpty, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidAddressLineIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLineEmpty, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidAddressLineTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLineShort, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidAddressLineTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLineShort, _City, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidAddressLineTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLineLarge, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidAddressLineTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLineLarge, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid City
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCityIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityNull, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCityIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityNull, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCityIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityEmpty, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCityIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityEmpty, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCityTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityShort, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCityTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityShort, _State, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCityTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityLarge, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCityTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _CityLarge, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid State
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidStateIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateNull, _LandlinePhone, _MobilePhone, null);
+            invalidStateIsNull = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateNull, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidStateIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateEmpty, _LandlinePhone, _MobilePhone, null);
+            invalidStateIsEmpty = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateEmpty, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidStateTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateShort, _LandlinePhone, _MobilePhone, null);
+            invalidStateTooShort = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateShort, _LandlinePhone, _MobilePhone);
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidStateTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateLarge, _LandlinePhone, _MobilePhone, null);
+            invalidStateTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _StateLarge, _LandlinePhone, _MobilePhone);
         #endregion
 
         #region Invalid Landline Phone
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidLandlinePhoneTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhoneLarge, _MobilePhone, null);
+            invalidLandlinePhoneTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhoneLarge, _MobilePhone);
         #endregion
 
         #region Invalid Mobile Phone
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidMobilePhoneTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhoneLarge, null);
+            invalidMobilePhoneTooLarge = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhoneLarge);
         #endregion
 
         #region Invalid Company Not Found
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            invalidCompanyNotFound = new(_GuidNew, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            invalidCompanyNotFound = new(_GuidNew, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
         #endregion
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.UpdateCompany.Request
-            validRequest = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone, null);
+            validRequest = new(_GuidAlreadyExists, _Name, _CnpjAlreadyExists, _ZipCode, _Street, _AddressNumber, _AddressLine, _City, _State, _LandlinePhone, _MobilePhone);
     }
 
     public class DeleteCompany

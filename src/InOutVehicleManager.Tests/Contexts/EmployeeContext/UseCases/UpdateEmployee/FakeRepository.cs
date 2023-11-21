@@ -6,8 +6,8 @@ namespace InOutVehicleManager.Tests.Contexts.EmployeeContext.UseCases.UpdateEmpl
 public class FakeRepository : IRepository
 {
     protected static readonly Guid _GuidRegistered = new("4f1c7b8d-8b7c-4e3a-9cbb-3ca3a2e4a2db");
-    private readonly Employee? _emailExists = new("Douglas", "Adams", "emailexists@contato.com", null, null);
-    private readonly Employee? _employee = new("Douglas", "Adams", "contato@contato.com", null, null);
+    private readonly Employee? _emailExists = new("Douglas", "Adams", "emailexists@contato.com", null);
+    private readonly Employee? _employee = new("Douglas", "Adams", "contato@contato.com", null);
 
     public Task<bool> AnyAsync(string emailAddress, CancellationToken cancellationToken)
     {

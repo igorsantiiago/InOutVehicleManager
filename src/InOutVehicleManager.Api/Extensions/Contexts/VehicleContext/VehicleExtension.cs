@@ -27,6 +27,13 @@ public static class VehicleExtension
             Infra.Contexts.VehicleContext.UseCases.DeleteVehicle.Repository
         >();
         #endregion
+
+        #region Search Vehicle
+        builder.Services.AddTransient<
+            Core.Contexts.VehicleContext.UseCases.SearchVehicle.Contracts.IRepository,
+            Infra.Contexts.VehicleContext.UseCases.SearchVehicle.Repository
+        >();
+        #endregion
     }
 
     public static void MapVehicleEndpoints(this WebApplication app)
@@ -64,11 +71,27 @@ public static class VehicleExtension
             [FromBody] Core.Contexts.VehicleContext.UseCases.DeleteVehicle.Request request,
             [FromServices] IRequestHandler<
                 Core.Contexts.VehicleContext.UseCases.DeleteVehicle.Request,
-                Core.Contexts.VehicleContext.UseCases.DeleteVehicle.Response> Handler) =>
+                Core.Contexts.VehicleContext.UseCases.DeleteVehicle.Response> handler) =>
         {
-            var result = await Handler.Handle(request, new CancellationToken());
+            var result = await handler.Handle(request, new CancellationToken());
             return result.IsSuccess
-                ? Results.Ok("Veículo removido com sucesso.")
+                ? Results.Ok(result)
+                : Results.Json(result, statusCode: result.Status);
+        });
+        #endregion
+
+        #region Search Vehicle
+        app.MapGet("api/v1/vehicle/search", async (
+            [FromQuery] Guid id,
+            [FromServices] IRequestHandler<
+                Core.Contexts.VehicleContext.UseCases.SearchVehicle.Request,
+                Core.Contexts.VehicleContext.UseCases.SearchVehicle.Response> handler) =>
+        {
+            var request = new Core.Contexts.VehicleContext.UseCases.SearchVehicle.Request(id);
+            var result = await handler.Handle(request, new CancellationToken());
+
+            return result.IsSuccess
+                ? Results.Ok(result)
                 : Results.Json(result, statusCode: result.Status);
         });
         #endregion

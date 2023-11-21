@@ -7,24 +7,27 @@ namespace InOutVehicleManager.Core.Contexts.CompanyContext.Entities;
 
 public class Company : Entity
 {
-    public Company(string name, Cnpj cnpj, Address address, Phone phone, Guid? idParking = null)
+    protected Company()
+    {
+
+    }
+    public Company(string name, Cnpj cnpj, Address address, Phone phone)
     {
         Name = name;
         Cnpj = cnpj;
         Address = address;
         Phone = phone;
-        Employees = new();
     }
 
     public string Name { get; private set; } = string.Empty;
-    public Cnpj Cnpj { get; private set; }
-    public Address Address { get; private set; }
-    public Phone Phone { get; private set; }
+    public Cnpj Cnpj { get; private set; } = null!;
+    public Address Address { get; private set; } = null!;
+    public Phone Phone { get; private set; } = null!;
 
     [JsonIgnore]
-    public List<Parking> Parking { get; set; } = null!;
+    public List<Parking> Parking { get; set; } = new();
 
-    public List<Employee> Employees { get; set; }
+    public List<Employee> Employees { get; set; } = new();
 
     public void UpdateName(string name)
         => Name = name;

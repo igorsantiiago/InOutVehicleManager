@@ -20,7 +20,7 @@ public static class BuilderExtension
 
     public static void AddDatabase(this WebApplicationBuilder builder)
         => builder.Services.AddDbContext<DataContext>(options =>
-            options.UseSqlServer(Configuration.Database.ConnectionString, assembly => assembly.MigrationsAssembly("InOutVehicleManager")));
+            options.UseSqlServer(Configuration.Database.ConnectionString, assembly => assembly.MigrationsAssembly("InOutVehicleManager.Api")));
 
 
     public static void AddJwtAuthentication(this WebApplicationBuilder builder)

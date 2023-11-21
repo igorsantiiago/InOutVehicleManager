@@ -94,7 +94,23 @@ public static class EmployeeExtension
             var result = await handler.Handle(request, new CancellationToken());
 
             return result.IsSuccess
-                ? Results.Ok("Funcionário removido com sucesso.")
+                ? Results.Ok(result)
+                : Results.Json(result, statusCode: result.Status);
+        });
+        #endregion
+
+        #region Search Employee By Id
+        app.MapGet("api/v1/employee/search/id/", async (
+            [FromQuery] Guid id,
+            [FromServices] IRequestHandler<
+                Core.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Request,
+                Core.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Response> handler) =>
+        {
+            var request = new Core.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Request(id);
+            var result = await handler.Handle(request, new CancellationToken());
+
+            return result.IsSuccess
+                ? Results.Ok(result)
                 : Results.Json(result, statusCode: result.Status);
         });
         #endregion

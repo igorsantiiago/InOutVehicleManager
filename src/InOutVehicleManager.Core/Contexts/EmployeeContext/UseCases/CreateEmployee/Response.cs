@@ -23,4 +23,4 @@ public class Response : SharedContext.UseCases.Response
     public ResponseData? Data { get; set; }
 }
 
-public record ResponseData(Guid Id, string Name, string Email, Guid? IdEmployer);
+public record ResponseData(Guid Id, string Name, string Email);

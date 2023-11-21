@@ -71,7 +71,7 @@ public static class ParkingExtension
             var result = await handler.Handle(request, new CancellationToken());
 
             return result.IsSuccess
-                ? Results.Ok("Estacionamento removido com sucesso.")
+                ? Results.Ok(result)
                 : Results.Json(result, statusCode: result.Status);
         });
         #endregion
