@@ -75,5 +75,21 @@ public static class ParkingExtension
                 : Results.Json(result, statusCode: result.Status);
         });
         #endregion
+
+        #region Search Parking By Id
+        app.MapGet("api/v1/company/parking/search/id/", async (
+            [FromQuery] Guid id,
+            [FromServices] IRequestHandler <
+                Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId.Request,
+                Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId.Response > handler) =>
+        {
+            var request = new Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId.Request(id);
+            var result = await handler.Handle(request, new CancellationToken());
+
+            return result.IsSuccess
+                ? Results.Ok(result)
+                : Results.Json(result, statusCode: result.Status);
+        });
+        #endregion
     }
 }

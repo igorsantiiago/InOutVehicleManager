@@ -33,4 +33,13 @@ public class Requests
         public readonly Core.Contexts.CompanyContext.UseCases.ParkingUseCases.DeleteParking.Request
             validParkingDeleted = new(_GuidRegistered);
     }
+
+    public class SearchParkingId
+    {
+        public readonly Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId.Request
+            invalidParkingNotFound = new(_NewGuid);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId.Request
+            validParkingExists = new(_GuidRegistered);
+    }
 }
