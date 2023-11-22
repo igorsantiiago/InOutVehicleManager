@@ -42,6 +42,16 @@ public class Requests
     protected static readonly string _PasswordNotMatch = "A1B2C3D4E5";
     #endregion
 
+    #region Role
+    protected static readonly string _RoleNull = null!;
+    protected static readonly string _RoleEmpty = "";
+    protected static readonly string _RoleTooShort = "A";
+    protected static readonly string _RoleTooLarge = "Programador Desenvolvedor";
+
+    protected static readonly string _RoleNotExists = "Useer";
+    protected static readonly string _Role = "Admin";
+    #endregion
+
     #endregion
 
     public class AuthenticateEmployee
@@ -191,5 +201,53 @@ public class Requests
 
         public readonly Core.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Request
             validEmployee = new(_GuidRegistered);
+    }
+
+    public class AddRole
+    {
+        public readonly Core.Contexts.EmployeeContext.UseCases.AddRole.Request
+            invalidRoleIsNull = new(_GuidRegistered, _RoleNull);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AddRole.Request
+            invalidRoleIsEmpty = new(_GuidRegistered, _RoleEmpty);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AddRole.Request
+            invalidRoleTooShort = new(_GuidRegistered, _RoleTooShort);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AddRole.Request
+            invalidRoleTooLarge = new(_GuidRegistered, _RoleTooLarge);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AddRole.Request
+            invalidEmployeeNotFound = new(_NewGuid, _Role);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AddRole.Request
+            invalidRoleNotFound = new(_GuidRegistered, _RoleNotExists);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.AddRole.Request
+            validRequest = new(_GuidRegistered, _Role);
+    }
+
+    public class RemoveRole
+    {
+        public readonly Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request
+            invalidRoleIsNull = new(_GuidRegistered, _RoleNull);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request
+            invalidRoleIsEmpty = new(_GuidRegistered, _RoleEmpty);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request
+            invalidRoleTooShort = new(_GuidRegistered, _RoleTooShort);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request
+            invalidRoleTooLarge = new(_GuidRegistered, _RoleTooLarge);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request
+            invalidEmployeeNotFound = new(_NewGuid, _Role);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request
+            invalidRoleNotFound = new(_GuidRegistered, _RoleNotExists);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request
+            validRequest = new(_GuidRegistered, _Role);
     }
 }

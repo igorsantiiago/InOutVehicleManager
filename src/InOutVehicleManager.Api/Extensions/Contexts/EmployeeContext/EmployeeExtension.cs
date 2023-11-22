@@ -42,6 +42,20 @@ public static class EmployeeExtension
             Infra.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Repository
         >();
         #endregion
+
+        #region Add Role
+        builder.Services.AddTransient<
+            Core.Contexts.EmployeeContext.UseCases.AddRole.Contracts.IRepository,
+            Infra.Contexts.EmployeeContext.UseCases.AddRole.Repository
+        >();
+        #endregion
+
+        #region Remove Role
+        builder.Services.AddTransient<
+            Core.Contexts.EmployeeContext.UseCases.RemoveRole.Contracts.IRepository,
+            Infra.Contexts.EmployeeContext.UseCases.RemoveRole.Repository
+        >();
+        #endregion
     }
 
     public static void MapEmployeeEndpoint(this WebApplication app)
@@ -114,6 +128,36 @@ public static class EmployeeExtension
                 Core.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Response> handler) =>
         {
             var request = new Core.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Request(id);
+            var result = await handler.Handle(request, new CancellationToken());
+
+            return result.IsSuccess
+                ? Results.Ok(result)
+                : Results.Json(result, statusCode: result.Status);
+        });
+        #endregion
+
+        #region Add Role
+        app.MapPut("api/v1/employee/update/addrole", async (
+            [FromBody] Core.Contexts.EmployeeContext.UseCases.AddRole.Request request,
+            [FromServices] IRequestHandler<
+                Core.Contexts.EmployeeContext.UseCases.AddRole.Request,
+                Core.Contexts.EmployeeContext.UseCases.AddRole.Response> handler) =>
+        {
+            var result = await handler.Handle(request, new CancellationToken());
+
+            return result.IsSuccess
+                ? Results.Ok(result)
+                : Results.Json(result, statusCode: result.Status);
+        });
+        #endregion
+
+        #region Remove Role
+        app.MapPut("api/v1/employee/update/removerole", async (
+            [FromBody] Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request request,
+            [FromServices] IRequestHandler<
+                Core.Contexts.EmployeeContext.UseCases.RemoveRole.Request,
+                Core.Contexts.EmployeeContext.UseCases.RemoveRole.Response> handler) =>
+        {
             var result = await handler.Handle(request, new CancellationToken());
 
             return result.IsSuccess
