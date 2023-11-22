@@ -27,6 +27,13 @@ public static class ParkingExtension
             Infra.Contexts.CompanyContext.UseCases.ParkingUseCases.DeleteParking.Repository
         >();
         #endregion
+
+        #region Search Parking By Id
+        builder.Services.AddTransient<
+            Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId.Contracts.IRepository,
+            Infra.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId.Repository
+        >();
+        #endregion
     }
 
     public static void MapParkingEndPoint(this WebApplication app)

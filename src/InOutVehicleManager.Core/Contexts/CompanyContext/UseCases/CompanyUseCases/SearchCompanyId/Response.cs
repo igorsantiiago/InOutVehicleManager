@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace InOutVehicleManager.Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId;
+namespace InOutVehicleManager.Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId;
 
 public class Response : SharedContext.UseCases.Response
 {
@@ -22,4 +22,4 @@ public class Response : SharedContext.UseCases.Response
     public ResponseData? Data { get; set; }
 }
 
-public record ResponseData(Guid Id, int TotalCarSpaces, int AvailableCarSpaces, int TotalMotorcycleSpaces, int AvaliableMotorcycleSpaces);
+public record ResponseData(Guid Id, string Name, string Cnpj, string Zipcode, string Street, int AddressNumber, string AddressLine, string City, string State, string? LandlinePhone, string? MobilePhone);

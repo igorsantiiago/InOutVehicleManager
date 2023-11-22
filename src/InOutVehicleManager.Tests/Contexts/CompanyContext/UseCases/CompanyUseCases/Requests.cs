@@ -329,4 +329,13 @@ public class Requests
             _validRequest = new(_GuidAlreadyExists);
 
     }
+
+    public class SearchCompanyId
+    {
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Request
+            _invalidCompanyNotFound = new(_GuidNew);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Request
+            _validRequest = new(_GuidAlreadyExists);
+    }
 }

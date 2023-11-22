@@ -1,9 +1,9 @@
 ﻿using FluentValidation.Results;
 using InOutVehicleManager.Core.Contexts.CompanyContext.Entities;
-using InOutVehicleManager.Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId.Contracts;
+using InOutVehicleManager.Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Contracts;
 using MediatR;
 
-namespace InOutVehicleManager.Core.Contexts.CompanyContext.UseCases.ParkingUseCases.SearchParkingId;
+namespace InOutVehicleManager.Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId;
 
 public class Handler : IRequestHandler<Request, Response>
 {
@@ -30,13 +30,13 @@ public class Handler : IRequestHandler<Request, Response>
         }
         #endregion
 
-        #region Get Parking by Id
-        Parking? parking;
+        #region Get Company Id
+        Company? company;
         try
         {
-            parking = await _repository.GetParkingById(request.Id, cancellationToken);
-            if (parking is null)
-                return new Response("Estacionamento não encontrado.", 404);
+            company = await _repository.GetCompanyById(request.Id, cancellationToken);
+            if (company is null)
+                return new Response("Empresa não encontrada.", 404);
         }
         catch (Exception ex)
         {
@@ -44,8 +44,8 @@ public class Handler : IRequestHandler<Request, Response>
         }
         #endregion
 
-        #region Result
-        return new Response("Estacionamento encontrado.", new ResponseData(parking.Id, parking.TotalCarParkingSpaces, parking.AvailableCarParkingSpaces, parking.TotalMotorcycleParkingSpaces, parking.AvailableMotorcycleParkingSpaces));
+        #region Response
+        return new Response("Empresa encontrada.", new ResponseData(company.Id, company.Name, company.Cnpj.Document, company.Address.ZipCode, company.Address.Street, company.Address.AddressNumber, company.Address.AddressLine, company.Address.City, company.Address.State, company.Phone.LandlinePhone, company.Phone.MobilePhone));
         #endregion
     }
 }

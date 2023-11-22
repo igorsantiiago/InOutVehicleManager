@@ -35,12 +35,19 @@ public static class EmployeeExtension
             Infra.Contexts.EmployeeContext.UseCases.DeleteEmployee.Repository
         >();
         #endregion
+
+        #region Search Employee By Id
+        builder.Services.AddTransient<
+            Core.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Contracts.IRepository,
+            Infra.Contexts.EmployeeContext.UseCases.SearchEmployeeId.Repository
+        >();
+        #endregion
     }
 
     public static void MapEmployeeEndpoint(this WebApplication app)
     {
         #region Authenticate Employee
-        app.MapPost("api/v1/employee/authenticate", async (
+        app.MapPost("api/v1/employee/authenticate/", async (
             [FromBody] Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request request,
             [FromServices] IRequestHandler<
                 Core.Contexts.EmployeeContext.UseCases.AuthenticateEmployee.Request,

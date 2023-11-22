@@ -27,6 +27,13 @@ public static class CompanyExtension
             Infra.Contexts.CompanyContext.UseCases.CompanyUseCases.DeleteCompany.Repository
         >();
         #endregion
+
+        #region Search Company By Id
+        builder.Services.AddTransient<
+            Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Contracts.IRepository,
+            Infra.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Repository
+        >();
+        #endregion
     }
 
     public static void MapCompanyEndpoint(this WebApplication app)
@@ -68,6 +75,22 @@ public static class CompanyExtension
                 Core.Contexts.CompanyContext.UseCases.CompanyUseCases.DeleteCompany.Request,
                 Core.Contexts.CompanyContext.UseCases.CompanyUseCases.DeleteCompany.Response> handler) =>
         {
+            var result = await handler.Handle(request, new CancellationToken());
+
+            return result.IsSuccess
+                ? Results.Ok(result)
+                : Results.Json(result, statusCode: result.Status);
+        });
+        #endregion
+
+        #region Search Company By Id
+        app.MapGet("api/v1/company/search/id/", async (
+            [FromQuery] Guid id,
+            [FromServices] IRequestHandler<
+                Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Request,
+                Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Response> handler) =>
+        {
+            var request = new Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Request(id);
             var result = await handler.Handle(request, new CancellationToken());
 
             return result.IsSuccess
