@@ -77,7 +77,7 @@ public static class BuilderExtension
                 Array.Empty<string>()
             }
             });
+            config.DocumentFilter<SwaggerExtension.HttpMethodDocumentFilter>();
         });
     }
 }
-
