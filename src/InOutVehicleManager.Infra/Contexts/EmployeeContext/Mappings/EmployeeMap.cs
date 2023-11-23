@@ -15,6 +15,8 @@ public class EmployeeMap : IEntityTypeConfiguration<Employee>
 
         builder.OwnsOne(x => x.Name).Property(x => x.LastName).HasColumnName("LastName").HasColumnType("NVARCHAR").HasMaxLength(30).IsRequired();
 
+        builder.OwnsOne(x => x.Document).Property(x => x.Cpf).HasColumnName("CPF").HasColumnType("NVARCHAR").HasMaxLength(11).IsRequired();
+
         builder.OwnsOne(x => x.Email).Property(x => x.Address).HasColumnName("Address").HasColumnType("NVARCHAR").HasMaxLength(120).IsRequired();
 
         builder.OwnsOne(x => x.Password).Property(x => x.Hash).HasColumnName("PasswordHash").HasColumnType("NVARCHAR").HasMaxLength(255).IsRequired();

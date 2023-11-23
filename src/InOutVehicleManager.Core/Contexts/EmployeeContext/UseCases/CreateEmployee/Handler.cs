@@ -30,12 +30,16 @@ public class Handler : IRequestHandler<Request, Response>
         }
         #endregion
 
-        #region Check if email already exists
+        #region Check if email and cpf already exists
         try
         {
-            var exists = await _repository.AnyAsync(request.EmailAddress, cancellationToken);
-            if (exists)
+            var emailExists = await _repository.AnyEmailAsync(request.EmailAddress, cancellationToken);
+            if (emailExists)
                 return new Response("Erro: Email já cadastrado.", 400);
+
+            var cpfExists = await _repository.AnyCpfAsync(request.Cpf, cancellationToken);
+            if (cpfExists)
+                return new Response("Erro: Cpf já cadastrado.", 400);
         }
         catch
         {
@@ -67,7 +71,7 @@ public class Handler : IRequestHandler<Request, Response>
 
     private static Employee? CreateEmployee(Request request)
     {
-        Employee? employee = new(request.FirstName, request.LastName, request.EmailAddress, request.Password);
+        Employee? employee = new(request.FirstName, request.LastName, request.Cpf, request.EmailAddress, request.Password);
         if (employee == null)
             return null;
 

@@ -60,6 +60,34 @@ public class HandlerTest
     }
 
     [Fact]
+    public async void Should_Fail_When_Cpf_Is_Null()
+    {
+        var result = await _handler.Handle(requests.invalidCpfIsNull, new CancellationToken());
+        Assert.False(result.IsSuccess);
+    }
+
+    [Fact]
+    public async void Should_Fail_When_Cpf_Is_Empty()
+    {
+        var result = await _handler.Handle(requests.invalidCpfIsEmpty, new CancellationToken());
+        Assert.False(result.IsSuccess);
+    }
+
+    [Fact]
+    public async void Should_Fail_When_Cpf_Is_Too_Short()
+    {
+        var result = await _handler.Handle(requests.invalidCpfTooShort, new CancellationToken());
+        Assert.False(result.IsSuccess);
+    }
+
+    [Fact]
+    public async void Should_Fail_When_Cpf_Is_Too_Large()
+    {
+        var result = await _handler.Handle(requests.invalidCpfTooLarge, new CancellationToken());
+        Assert.False(result.IsSuccess);
+    }
+
+    [Fact]
     public async void Should_Fail_When_EmailAddress_Is_Null_Or_Empty()
     {
         var result = await _handler.Handle(requests.invalidEmailAddressIsNull, new CancellationToken());

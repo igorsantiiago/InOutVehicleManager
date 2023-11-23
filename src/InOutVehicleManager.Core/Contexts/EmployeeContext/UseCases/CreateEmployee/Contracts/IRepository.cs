@@ -4,6 +4,7 @@ namespace InOutVehicleManager.Core.Contexts.EmployeeContext.UseCases.CreateEmplo
 
 public interface IRepository
 {
-    Task<bool> AnyAsync(string emailAddress, CancellationToken cancellationToken);
+    Task<bool> AnyCpfAsync(string cpf, CancellationToken cancellationToken);
+    Task<bool> AnyEmailAsync(string emailAddress, CancellationToken cancellationToken);
     Task SaveAsync(Employee employee, CancellationToken cancellationToken);
 }

@@ -8,21 +8,24 @@ public class Employee : Entity
 {
     protected Employee() { }
 
-    public Employee(string firstName, string lastName, string address, string? password = null)
+    public Employee(string firstName, string lastName, string document, string emailAddress, string? password = null)
     {
         Name = new(firstName, lastName);
-        Email = new(address);
+        Document = new(document);
+        Email = new(emailAddress);
         Password = new(password);
     }
 
-    public Employee(Name name, Email email, string? password = null)
+    public Employee(Name name, Document document, Email email, string? password = null)
     {
         Name = name;
+        Document = document;
         Email = email;
         Password = new(password);
     }
 
     public Name Name { get; private set; } = null!;
+    public Document Document { get; set; } = null!;
     public Email Email { get; private set; } = null!;
     public Password Password { get; private set; } = null!;
     public List<Role> Roles { get; private set; } = new();

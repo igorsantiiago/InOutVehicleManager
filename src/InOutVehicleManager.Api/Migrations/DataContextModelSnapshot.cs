@@ -328,6 +328,25 @@ namespace InOutVehicleManager.Api.Migrations
 
             modelBuilder.Entity("InOutVehicleManager.Core.Contexts.EmployeeContext.Entities.Employee", b =>
                 {
+                    b.OwnsOne("InOutVehicleManager.Core.Contexts.EmployeeContext.ValueObjects.Document", "Document", b1 =>
+                        {
+                            b1.Property<Guid>("EmployeeId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("Cpf")
+                                .IsRequired()
+                                .HasMaxLength(11)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("CPF");
+
+                            b1.HasKey("EmployeeId");
+
+                            b1.ToTable("Employee");
+
+                            b1.WithOwner()
+                                .HasForeignKey("EmployeeId");
+                        });
+
                     b.OwnsOne("InOutVehicleManager.Core.Contexts.EmployeeContext.ValueObjects.Email", "Email", b1 =>
                         {
                             b1.Property<Guid>("EmployeeId")
@@ -390,6 +409,9 @@ namespace InOutVehicleManager.Api.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("EmployeeId");
                         });
+
+                    b.Navigation("Document")
+                        .IsRequired();
 
                     b.Navigation("Email")
                         .IsRequired();

@@ -39,6 +39,7 @@ namespace InOutVehicleManager.Api.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "NVARCHAR(30)", maxLength: 30, nullable: false),
                     LastName = table.Column<string>(type: "NVARCHAR(30)", maxLength: 30, nullable: false),
+                    CPF = table.Column<string>(type: "NVARCHAR(11)", maxLength: 11, nullable: false),
                     Address = table.Column<string>(type: "NVARCHAR(120)", maxLength: 120, nullable: false),
                     PasswordHash = table.Column<string>(type: "NVARCHAR(255)", maxLength: 255, nullable: false)
                 },

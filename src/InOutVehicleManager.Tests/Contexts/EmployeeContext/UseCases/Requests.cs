@@ -23,6 +23,15 @@ public class Requests
     protected static readonly string _LastName = "Adams";
     #endregion
 
+    #region Document CPF
+    protected static readonly string _CpfNull = null!;
+    protected static readonly string _CpfEmpty = "";
+    protected static readonly string _CpfShort = "01120";
+    protected static readonly string _CpfLarge = "012345678901";
+    protected static readonly string _CpfAlreadyExists = "01234567890";
+    protected static readonly string _NewCpf = "12345678900";
+    #endregion
+
     #region Email Address
     protected static readonly string _EmailAddressNull = null!;
     protected static readonly string _EmailAddressShort = "d@a.c";
@@ -88,53 +97,70 @@ public class Requests
     {
         #region Invalid First Name
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidFirstNameIsNull = new(_FirstNameNull, _LastName, _EmailAddress, _Password);
+            invalidFirstNameIsNull = new(_FirstNameNull, _LastName, _NewCpf, _EmailAddress, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidFirstNameTooShort = new(_FirstNameShort, _LastName, _EmailAddress, _Password);
+            invalidFirstNameTooShort = new(_FirstNameShort, _LastName, _NewCpf, _EmailAddress, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidFirstNameTooLarge = new(_FirstNameLarge, _LastName, _EmailAddress, _Password);
+            invalidFirstNameTooLarge = new(_FirstNameLarge, _LastName, _NewCpf, _EmailAddress, _Password);
         #endregion
 
         #region Invalid Last Name
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidLastNameIsNull = new(_FirstName, _LastNameNull, _EmailAddress, _Password);
+            invalidLastNameIsNull = new(_FirstName, _LastNameNull, _NewCpf, _EmailAddress, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidLastNameTooShort = new(_FirstName, _LastNameShort, _EmailAddress, _Password);
+            invalidLastNameTooShort = new(_FirstName, _LastNameShort, _NewCpf, _EmailAddress, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidLastNameTooLarge = new(_FirstName, _LastNameLarge, _EmailAddress, _Password);
+            invalidLastNameTooLarge = new(_FirstName, _LastNameLarge, _NewCpf, _EmailAddress, _Password);
+        #endregion
+
+        #region Invalid CPF
+        public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
+            invalidCpfIsNull = new(_FirstName, _LastName, _CpfNull, _EmailAddress, _Password);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
+            invalidCpfIsEmpty = new(_FirstName, _LastName, _CpfEmpty, _EmailAddress, _Password);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
+            invalidCpfTooShort = new(_FirstName, _LastName, _CpfShort, _EmailAddress, _Password);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
+            invalidCpfTooLarge = new(_FirstName, _LastName, _CpfLarge, _EmailAddress, _Password);
+
+        public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
+            invalidCpfAlreadyExists = new(_FirstName, _LastName, _CpfAlreadyExists, _EmailAddress, _Password);
         #endregion
 
         #region Invalid Email
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidEmailAddressIsNull = new(_FirstName, _LastName, _EmailAddressNull, _Password);
+            invalidEmailAddressIsNull = new(_FirstName, _LastName, _NewCpf, _EmailAddressNull, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidEmailAddressTooShort = new(_FirstName, _LastName, _EmailAddressShort, _Password);
+            invalidEmailAddressTooShort = new(_FirstName, _LastName, _NewCpf, _EmailAddressShort, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidEmailAddressTooLarge = new(_FirstName, _LastName, _EmailAddressLarge, _Password);
+            invalidEmailAddressTooLarge = new(_FirstName, _LastName, _NewCpf, _EmailAddressLarge, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidEmailAddress = new(_FirstName, _LastName, _EmailAddressInvalid, _Password);
+            invalidEmailAddress = new(_FirstName, _LastName, _NewCpf, _EmailAddressInvalid, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidEmailAddressAlreadyExists = new(_FirstName, _LastName, _EmailAddressAlreadyExists, _Password);
+            invalidEmailAddressAlreadyExists = new(_FirstName, _LastName, _NewCpf, _EmailAddressAlreadyExists, _Password);
         #endregion
 
         #region Invalid Password
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            invalidPasswordTooLarge = new(_FirstName, _LastName, _EmailAddress, _PasswordLarge);
+            invalidPasswordTooLarge = new(_FirstName, _LastName, _NewCpf, _EmailAddress, _PasswordLarge);
         #endregion
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            validEmailAddressNew = new(_FirstName, _LastName, _EmailAddress, _Password);
+            validEmailAddressNew = new(_FirstName, _LastName, _NewCpf, _EmailAddress, _Password);
 
         public readonly Core.Contexts.EmployeeContext.UseCases.CreateEmployee.Request
-            validRequest = new(_FirstName, _LastName, _EmailAddress, _Password);
+            validRequest = new(_FirstName, _LastName, _NewCpf, _EmailAddress, _Password);
     }
 
     public class UpdateEmployee
