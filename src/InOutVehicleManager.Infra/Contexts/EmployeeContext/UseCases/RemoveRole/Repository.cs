@@ -14,13 +14,13 @@ public class Repository : IRepository
     }
 
     public async Task<Employee?> GetEmployeeByIdAsync(Guid employeeId, CancellationToken cancellationToken)
-        => await _context.Employees.FirstOrDefaultAsync(x => x.Id == employeeId, cancellationToken);
+        => await _context.Employees.Include(x => x.Roles).FirstOrDefaultAsync(x => x.Id == employeeId, cancellationToken);
     public async Task<Role?> GetRoleByNameAsync(string role, CancellationToken cancellationToken)
         => await _context.Roles.FirstOrDefaultAsync(x => x.Name == role, cancellationToken);
 
     public async Task RemoveRole(Employee employee, Role role, CancellationToken cancellationToken)
     {
-        employee.RemoveRole(role);
+        employee.Roles.Remove(role);
         await _context.SaveChangesAsync(cancellationToken);
     }
 }
