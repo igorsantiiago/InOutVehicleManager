@@ -50,4 +50,9 @@ public class Company : Entity
         Phone.UpdateLandlinePhone(landlinePhone);
         Phone.UpdateMobilePhone(mobilePhone);
     }
+
+    public void RegisterEmployee(Employee employee)
+    {
+        Employees.Add(employee);
+    }
 }

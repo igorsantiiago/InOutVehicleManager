@@ -1,5 +1,13 @@
 ### 🚧Em Desenvolvimento🚧
 
+- Faltam ser desenvolvidos:
+	- Empresa
+		- Remover funcionário da empresa
+	- Empresa / Estacionamento
+		- Registrar entrada de veículo
+		- Registrar saída de veículo
+	- Mais para frente, se possivel, desenvolvedor front-end
+
 # 📌 Desafio para vaga de Desenvolvimento Back-end .NET
 Esse desafio é uma adaptação de um [teste da empresa FCamara](https://github.com/fcamarasantos/backend-test-dotnet), para a vaga de back-end.
 

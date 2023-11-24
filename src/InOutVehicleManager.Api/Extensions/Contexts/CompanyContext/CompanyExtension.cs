@@ -34,6 +34,13 @@ public static class CompanyExtension
             Infra.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Repository
         >();
         #endregion
+
+        #region Register Employee
+        builder.Services.AddTransient<
+            Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Contracts.IRepository,
+            Infra.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Repository
+        >();
+        #endregion
     }
 
     public static void MapCompanyEndpoint(this WebApplication app)
@@ -91,6 +98,21 @@ public static class CompanyExtension
                 Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Response> handler) =>
         {
             var request = new Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Request(id);
+            var result = await handler.Handle(request, new CancellationToken());
+
+            return result.IsSuccess
+                ? Results.Ok(result)
+                : Results.Json(result, statusCode: result.Status);
+        });
+        #endregion
+
+        #region Register Employee
+        app.MapPut("api/v1/company/employee/register", async (
+            [FromBody] Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request request,
+            [FromServices] IRequestHandler<
+                Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request,
+                Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Response> handler) =>
+        {
             var result = await handler.Handle(request, new CancellationToken());
 
             return result.IsSuccess

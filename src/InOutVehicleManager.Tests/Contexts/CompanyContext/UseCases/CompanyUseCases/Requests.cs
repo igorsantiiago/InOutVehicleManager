@@ -80,6 +80,15 @@ public class Requests
     protected static readonly string _MobilePhone = "098765432";
     #endregion
 
+    #region CPF
+    protected static readonly string _CpfNull = null!;
+    protected static readonly string _CpfEmpty = "";
+    protected static readonly string _CpfShort = "001122";
+    protected static readonly string _CpfLarge = "0011223344556677";
+    protected static readonly string _CpfNew = "00112233445";
+    protected static readonly string _CpfAlreadyExists = "01234567890";
+    #endregion
+
     #endregion
 
     public class CreateCompany
@@ -337,5 +346,45 @@ public class Requests
 
         public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.SearchCompanyId.Request
             _validRequest = new(_GuidAlreadyExists);
+    }
+
+    public class RegisterEmployee
+    {
+        #region Invalid Cnpj
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCnpjIsNull = new(_CnpjNull, _CpfAlreadyExists);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCnpjIsEmpty = new(_CnpjEmpty, _CpfAlreadyExists);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCnpjTooShort = new(_CnpjShort, _CpfAlreadyExists);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCnpjTooLarge = new(_CnpjLarge, _CpfAlreadyExists);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCnpjNotFound = new(_CnpjNew, _CpfAlreadyExists);
+        #endregion
+
+        #region Invalid Cpf
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCpfIsNull = new(_CnpjAlreadyExists, _CpfNull);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCpfIsEmpty = new(_CnpjAlreadyExists, _CpfEmpty);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCpfTooShort = new(_CnpjAlreadyExists, _CpfShort);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCpfTooLarge = new(_CnpjAlreadyExists, _CpfLarge);
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            invalidCpfNotFound = new(_CnpjAlreadyExists, _CpfNew);
+        #endregion
+
+        public readonly Core.Contexts.CompanyContext.UseCases.CompanyUseCases.RegisterEmployee.Request
+            validRequest = new(_CnpjAlreadyExists, _CpfAlreadyExists);
     }
 }
